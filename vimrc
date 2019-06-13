@@ -16,30 +16,6 @@ set fdm=manual
 
 set laststatus=2
 
-"============ <colorscheme config> ============
-" mkdir ~/.vim/colors/
-" cp ~/.vim/bundle/vim-colors-solarized/colors/solarized.vim ~/.vim/colors/
-" onedark主题需要cp autoload文件
-" cp  ~/.vim/bundle/onedark.vim/autoload/onedark.vim ~/.vim/autoload/
-let g:solarized_termcolors=256
-set background=dark
-"let g:onedark_termcolors=256
-"colorscheme onedark
-colorscheme solarized
-
-"============ <encoding config> ============
-set encoding=utf-8
-set termencoding=utf-8
-set fileencodings=utf-8,gbk,latin1
-
-
-"============ <minibufexpl config> ============
-"不自动打开minibufexpl
-let g:miniBufExplorerAutoStart = 0
-
-
-
-
 "============ <keymap config> ============
 let mapleader=","
 
@@ -66,6 +42,30 @@ nmap <leader>z :MBEToggle<CR>
 
 " 当前无文件编辑窗口时，自动退出
 "autocmd BufEnter * if 0 == len(filter(range(1, winnr('$')), 'empty(getbufvar(winbufnr(v:val), "&bt"))')) | qa! | endif
+
+"============ <colorscheme config> ============
+" mkdir ~/.vim/colors/
+" cp ~/.vim/bundle/vim-colors-solarized/colors/solarized.vim ~/.vim/colors/
+" onedark主题需要cp autoload文件
+" cp  ~/.vim/bundle/onedark.vim/autoload/onedark.vim ~/.vim/autoload/
+let g:solarized_termcolors=256
+set background=dark
+"let g:onedark_termcolors=256
+"colorscheme onedark
+colorscheme solarized
+
+"============ <encoding config> ============
+set encoding=utf-8
+set termencoding=utf-8
+set fileencodings=utf-8,gbk,latin1
+
+
+"============ <minibufexpl config> ============
+"不自动打开minibufexpl
+let g:miniBufExplorerAutoStart = 0
+
+
+
 
 "============ <DoxygenToolkit config> ============
 let g:DoxygenToolkit_authorName="yourname"
