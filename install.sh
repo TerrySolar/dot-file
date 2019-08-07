@@ -31,6 +31,10 @@ if [ ! -d "./.vim" ]; then
     tar -zxf vim.tar.gz
 fi
 
+if [ ! -d "$HOME/.vim_undo" ]; then
+    mkdir "$HOME/.vim_undo"
+fi
+
 rm -rf "$HOME/.vim"
 cp -rf .vim "$HOME/.vim"
 cp -rf tmux.conf "$HOME/.tmux.conf"
