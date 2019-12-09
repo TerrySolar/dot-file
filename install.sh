@@ -3,12 +3,12 @@
 term256=`ls terminal-256-color`
 
 # use terminal 256 color
-echo 'tic terminale 256 color...'
-for file in ${term256}
-do
-    tic 'terminal-256-color'/${file}
-done
-echo 'tic terminale 256 color done!'
+#echo 'tic terminale 256 color...'
+#for file in ${term256}
+#do
+#    tic 'terminal-256-color'/${file}
+#done
+#echo 'tic terminale 256 color done!'
 
 
 if [ -e "$HOME/.tmux.conf" ]; then

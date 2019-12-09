@@ -1,4 +1,5 @@
 set nocompatible              " be iMproved, required
+set backspace=indent,eol,start
 filetype on                  " required
 
 syntax on
@@ -6,11 +7,12 @@ set smartindent
 set tabstop=4
 set shiftwidth=4
 set expandtab
-set nu
+"set nu
 set softtabstop=4
 set hlsearch
-"set cursorline
-set autochdir
+set cursorline
+"跟随文件切换当前目录
+"set autochdir
 " 开启手动代码折叠  eg: zfa{ 折叠大括号区域
 set fdm=manual
 
@@ -48,11 +50,17 @@ nmap <leader>z :MBEToggle<CR>
 " cp ~/.vim/bundle/vim-colors-solarized/colors/solarized.vim ~/.vim/colors/
 " onedark主题需要cp autoload文件
 " cp  ~/.vim/bundle/onedark.vim/autoload/onedark.vim ~/.vim/autoload/
-let g:solarized_termcolors=256
-set background=dark
-"let g:onedark_termcolors=256
-"colorscheme onedark
-colorscheme solarized
+"let g:solarized_termcolors=256
+"set background=dark
+colorscheme onedark
+let g:onedark_termcolors=256
+"colorscheme solarized
+"
+"
+""============ <YouCompleteMe config> ============
+let g:ycm_key_list_stop_completion = ['<CR>']
+let g:ycm_key_list_select_completion = ['<c-j>', '<Down>']
+let g:ycm_key_list_previous_completion = ['<c-k>', '<Up>']
 
 "============ <encoding config> ============
 set encoding=utf-8
@@ -64,8 +72,9 @@ set fileencodings=utf-8,gbk,latin1
 "不自动打开minibufexpl
 let g:miniBufExplorerAutoStart = 0
 
-
-
+"============ <thrift config> ============
+au BufRead,BufNewFile *.thrift set filetype=thrift
+au! Syntax thrift source ~/.vim/thrift.vim
 
 "============ <DoxygenToolkit config> ============
 let g:DoxygenToolkit_authorName="yourname"
@@ -163,17 +172,25 @@ Plugin 'mileszs/ack.vim'
 Plugin 'scrooloose/nerdtree'
 Plugin 'Xuyuanp/nerdtree-git-plugin'
 Plugin 'majutsushi/tagbar'
-"Plugin 'vim-airline/vim-airline'
-Plugin 'TerrySolar/eleline.vim'
+Plugin 'vim-airline/vim-airline'
+"Plugin 'TerrySolar/eleline.vim'
 Plugin 'Raimondi/delimitMate'
 Plugin 'fholgado/minibufexpl.vim'
 Plugin 'airblade/vim-gitgutter'
+Plugin 'tpope/vim-fugitive'
+
+Plugin 'fatih/vim-go'
+Plugin 'SirVer/ultisnips'
+Plugin 'honza/vim-snippets'
+Plugin 'christoomey/vim-tmux-navigator'
+"Plugin 'ycm-core/YouCompleteMe'
 
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
 filetype plugin on
+
 
 
 "===================== Self Functions Start =====================
